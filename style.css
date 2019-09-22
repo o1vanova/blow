@@ -1,0 +1,250 @@
+@font-face {
+    font-family: "Montserrat-Regular";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    src: url('./assets/fonts/Montserrat-Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    src: url('./assets/fonts/Montserrat-Bold.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat-Black";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    src: url('./assets/fonts/Montserrat-Black.ttf') format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Montserrat-Regular", "Arial", sans-serif;    
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: black;
+    background: url('./assets/images/Blow.jpg');
+    background-size: cover;
+}
+
+.header {
+    height: 100px;
+    flex: 0 0 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header .logo {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 120px;
+}
+
+.header .logo > span {
+    font-family: "Montserrat-Black", "Arial", sans-serif;
+    font-size: 40px;
+}
+
+.navbar {
+    width: 580px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar ul li {
+    width: 100px;
+    height: 41px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+li:hover {
+    border-radius: 20px;
+    background-color: #000000;
+}
+
+.navbar ul li a {
+    display: block;
+    text-decoration: none;
+    color: #000000;   
+    font-family: "Montserrat-Regular", "Arial", sans-serif;
+}
+
+.navbar ul li:hover a {
+    color: #ffffff;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 180px;
+}
+
+.button {
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    cursor: pointer;
+    border-radius: 30px;
+    -webkit-box-shadow: 15px 50px 60px 0px rgba(0,0,0,0.7);
+    box-shadow: 15px 50px 60px 0px rgba(0,0,0,0.7);
+}
+
+.button > span {
+    font-family: "Montserrat-Regular", "Arial", sans-serif;
+    color: #f0cdac;
+    letter-spacing: 0.8px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.button:hover > span {
+    color: #ffffff;
+}
+
+.button:hover {
+    background-color: #333333;
+}
+
+.button:active {
+    background-color: #000000;
+    transform: translateY(2px);
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+	background-color: #ffffff;
+    transition: 0.5s;
+    transition-timing-function: ease-in;    
+    cursor: pointer;
+}
+
+.sidebar:hover {
+	width: 120px;
+}
+
+.sidebar .sidebar-info {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-orientation: sideways-right;
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;  /*--writing-mode for IE--*/    
+}
+
+.bold-text {
+    font-family: "Montserrat-Bold", "Arial", sans-serif;
+    color: #000000;
+}
+
+.light-text {
+    font-family: "Montserrat-Regular", "Arial", sans-serif;
+    color: #b3b3b3;
+}
+
+.sidebar .sidebar-img {
+    flex: 0 0 auto;
+    margin: 0 auto 40px auto;
+    text-align: center; /*--auto margin for IE--*/
+    cursor: pointer;
+}
+
+.icon {
+    width: 40px;
+    height: 36px;
+    background-size: cover;
+    display: inline-block;
+}
+
+.icon-bag {
+    background-image: url("./assets/images/bag.svg");
+    opacity: 0.6;
+}
+
+.sidebar:hover .icon {
+    opacity: 1;
+}
+
+/*styles for small displays*/
+@media(max-width: 800px) {
+    .sidebar {
+        display: none;
+    }
+
+    .header .logo {
+        margin-left: 60px;
+    }
+
+    .navbar {
+        width: auto;
+        margin-top: 20px;
+        flex-direction: row;
+    }
+    
+    .navbar ul {
+        display: block;
+    }
+
+    .navbar ul li {
+        margin-right: 10px;
+    }
+}
